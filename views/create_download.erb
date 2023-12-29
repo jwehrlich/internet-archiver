@@ -1,0 +1,21 @@
+<!-- views/add_row.erb -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Archive</title>
+</head>
+<body>
+  <h1>Add New Archive</h1>
+
+  <form action="/downloads/new" method="post">
+    <label for="content_key">Content Key:</label>
+    <input type="text" name="content_key" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <a href="/">Back to Main Page</a>
+</body>
+</html>

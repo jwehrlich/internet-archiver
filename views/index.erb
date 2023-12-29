@@ -1,0 +1,42 @@
+<!-- views/index.erb -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Keys</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <script type="text/javascript" src="js/draggable.js"></script>
+</head>
+<body>
+  <h1>List of Downloads</h1>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Content Key</th>
+        <th>Status</th>
+        <th>Priority</th>
+        <th>Created At</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% archives.order(:priority).each do |archive| %>
+        <tr class="draggable">
+          <td class="content-id"><%= archive.id %></td>
+          <td class="content-key"><%= archive.key %></td>
+          <td class="status"><%= archive.status %></td>
+          <td class="priority"><%= archive.priority %></td>
+          <td class="created-at"><%= archive.created_at %></td>
+          <td>
+            <a href="/downloads/<%= archive.id %>">Details</a>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <a href="/downloads/new">Add New Row</a>
+</body>
+</html>

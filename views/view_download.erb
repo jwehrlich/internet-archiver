@@ -1,0 +1,38 @@
+<!-- views/view_download.erb -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details for "<%= archive.key %>"</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <h1>Details for "<%= archive.key %>"</h1>
+  <div><b>Created:</b> <%= archive.created_at %></div>
+  <div><b>Last updated:</b> <%= archive.created_at %></div>
+  <div><b>Status:</b> <%= archive.status %></div>
+  <div><b>Priority:</b> <%= archive.priority %></div>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>Sizie</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% archive.downloads.each do |download| %>
+        <tr>
+          <td><%= download.path %></td>
+          <td><%= download.mb_size %> MB</td>
+          <td><%= download.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div><a href="/">Back to Main Page</a></div>
+</body>
+</html>

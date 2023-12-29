@@ -1,0 +1,8 @@
+.DS_Store
+.byebug_history
+.git
+.gitignore
+logs/*
+tmp/*
+download/*
+*.db
